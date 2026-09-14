@@ -21,7 +21,7 @@ An example truncated ephys session is shown below.
 #### Ephys
 The following data is contained in the electrophysiological recordings.
 
-|   Mouse ID | Type                |   Number of sessions | Stimuli                                                                                                                                      |   Number of probes |   Number of units |
+|   Mouse ID | Type                |   Number of sessions | Stimuli                                                                                                                                      |   Number of probes |   Number of units across probes |
 |-----------:|:--------------------|---------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------|-------------------:|------------------:|
 |     810531 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2251 |
 |     810532 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2202 |
