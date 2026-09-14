@@ -5,7 +5,7 @@ The dataset includes It includes electrophysiological recordings (Ephys) using f
 
 ## Stimuli
 
-The stimuli for the electrophysiological recordings recordings includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90), full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135), and full-field flashes.   
+The stimuli for the electrophysiological recordings includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90), full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135), and full-field flashes.   
 
 The stimuli for the two-photon measurements includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90) and full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135).   
 
