@@ -48,5 +48,4 @@ The following data is contained in the 2-p recordings.
 |     823093 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2915 |
 |     826616 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2575 |
 |     826619 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2226 |
-[summary_table_by_mouse.md](https://github.com/user-attachments/files/32214446/summary_table_by_mouse.md)
 
