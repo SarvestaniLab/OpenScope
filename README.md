@@ -9,7 +9,7 @@ The stimuli for the electrophysiological recordings recordings includes gabor pa
 
 The stimuli for the two-photon measurements includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90) and full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135).   
 
-An example session is shown below.
+An example truncated ephys session is shown below.
 
 <p align="center">
   <video src="https://github.com/user-attachments/assets/1c861f92-a653-4379-990b-01a02dc8050d" width="30%"></video>
