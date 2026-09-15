@@ -45,6 +45,13 @@ The following data is contained in the electrophysiological recordings.
 |     817334 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2925 |
 |     817335 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2403 |
 
+
+
+An example breakdown of trials and times for one of the ephys sessions is shown below. 
+
+<img width="4601" height="753" alt="817335_ephys_plot" src="https://github.com/user-attachments/assets/21a1acaf-042d-4b6a-8de3-b0feb9ffdedf" />
+
+
 #### Ophys
 The following data is contained in the 2-p recordings.
 |   Mouse ID | Type                                                              |   Number of sessions | Stimuli                                                                                                     |   Number of imaging planes |   Number of ROIs across planes and sessions |
@@ -57,6 +64,12 @@ The following data is contained in the 2-p recordings.
 |     823093 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2915 |
 |     826616 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2575 |
 |     826619 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2226 |
+
+
+
+An example breakdown of trials and times for one of the ophys sessions is shown below.
+
+<img width="4601" height="753" alt="809092_ophys_plot" src="https://github.com/user-attachments/assets/9105fce1-ff95-44d3-af36-49092eea584c" />
 
 ## Recording methods and data structure
 ### Ephys
