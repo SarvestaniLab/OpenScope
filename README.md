@@ -28,51 +28,17 @@ An example truncated ephys session is shown below.
   <video src="https://github.com/user-attachments/assets/1c861f92-a653-4379-990b-01a02dc8050d" width="30%"></video>
 </p>
 
-
-## Recordings
-
-#### Ephys
-The following data is contained in the electrophysiological recordings.
-
-|   Mouse ID | Type                |   Number of sessions | Stimuli                                                                                                                                      |   Number of probes |   Number of units across probes |
-|-----------:|:--------------------|---------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------|-------------------:|------------------:|
-|     810531 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2251 |
-|     810532 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2202 |
-|     813810 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2996 |
-|     815152 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2353 |
-|     816305 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2732 |
-|     816308 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2512 |
-|     817334 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2925 |
-|     817335 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2403 |
+## Recording methods and data structure
+### Ephys
+#### Data recording methods
 
 
+#### Data structure
 
 An example breakdown of trials and times for one of the ephys sessions is shown below. 
 
 <img width="4601" height="753" alt="817335_ephys_plot" src="https://github.com/user-attachments/assets/21a1acaf-042d-4b6a-8de3-b0feb9ffdedf" />
 
-
-#### Ophys
-The following data is contained in the 2-p recordings.
-|   Mouse ID | Type                                                              |   Number of sessions | Stimuli                                                                                                     |   Number of imaging planes |   Number of ROIs across planes and sessions |
-|-----------:|:------------------------------------------------------------------|---------------------:|:------------------------------------------------------------------------------------------------------------|---------------------------:|---------------------------------:|
-|     809092 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             3284 |
-|     810268 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2233 |
-|     815059 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2712 |
-|     818322 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    2 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                              630 |
-|     818323 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                              973 |
-|     823093 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2915 |
-|     826616 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2575 |
-|     826619 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2226 |
-
-
-
-An example breakdown of trials and times for one of the ophys sessions is shown below.
-
-<img width="4601" height="753" alt="809092_ophys_plot" src="https://github.com/user-attachments/assets/9105fce1-ff95-44d3-af36-49092eea584c" />
-
-## Recording methods and data structure
-### Ephys
 ### Ophys
 #### Data recording methods
 
@@ -90,6 +56,10 @@ An example breakdown of trials and times for one of the ophys sessions is shown 
 | Neural data | Stimulus data | Behavioural data |
 |---|---|---|
 | **`nwb.processing['VISp_0'] … ['VISp_7']`**<br>Eight modules, one per imaging plane — identical structure.<br>N frames × N ROIs.<br>9.5 or 10.6 Hz, by microscope.<br><br>**Traces** — all the same shape, each with its own timestamps.**One row per frame · one column per ROI.**<br>`['raw_timeseries']['ROI_fluorescence_timeseries']` · a.u.<br>`['neuropil_fluorescence_timeseries']` · a.u.<br>`['neuropil_corrected_timeseries']` · a.u.<br>`['dff_timeseries']['dff_timeseries']` · %<br>`['event_timeseries']` · AP-related events<br><br>**Segmentation**<br> **`['image_segmentation']['roi_table']`**<br>N rows, one per ROI<br>`is_soma` · `soma_probability` · `is_dendrite` · `dendrite_probability` · `image_mask` (512 × 512, use `> 0` for the footprint)<br><br>**Whole plane images**<br>**`['images']`**<br>`['average_projection']` · `['max_projection']` · `['segmentation_mask_image']` — 512 × 512 each<br>`['segmentation_mask_image']` labels every ROI in one array |**`nwb.intervals`**<br>Two stimulus tables, one per block.<br>One row per trial.<br>*Shared columns*<br>`start_time` · `stop_time` (seconds, session clock)<br>`stim_name` · `stim_type` · `stim_index`<br><br>**RF block**<br>**`['receptive_field_block_presentations']`**<br>N rows · 0.25 s per trial, back-to-back<br>*Position* `x_position` · `y_position`<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br>**Tuning block**<br>**`['drifting_gratings_field_block_presentations']`**<br>N rows · 1.0 s per trial, 1.25 s apart<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br>No position columns — full field<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp; | **Locomotion** <br> **`nwb.processing['running']`**<br>N samples · ~60 Hz<br>TimeSeries — timestamps on `.timestamps`<br>`['running_speed']` · cm/s, negative = backwards<br>`['running_wheel_rotation']` · radians<br><br>**Eye tracking**<br>**`nwb.processing['eye_tracking']`**<br>N rows · ~60 Hz · one row per camera frame<br>`['pupil']` · `['corneal_reflection']` · `['ellipse']`<br>&emsp;**DynamicTables — timestamps are a column**, not `.timestamps`<br>*All three tables have these columns*<br>`data_x` · `data_y` · `width` · `height` · `angle`<br>`area` · `area_raw` · `timestamps`<br>`reference_frame = 'nose'`<br>⚠️ `−1` marks a failed fit, not a value. Nothing is NaN.<br>`['likely_blink_times']`<br>TimeSeries, bool — timestamps on `.timestamps`<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp; |
+
+An example breakdown of trials and times for one of the ophys sessions is shown below.
+
+<img width="4601" height="753" alt="809092_ophys_plot" src="https://github.com/user-attachments/assets/9105fce1-ff95-44d3-af36-49092eea584c" />
 
 ## Data access with DANDI CLI
 
