@@ -47,7 +47,7 @@ The following data is contained in the electrophysiological recordings.
 
 #### Ophys
 The following data is contained in the 2-p recordings.
-|   Mouse ID | Type                                                              |   Number of sessions | Stimuli                                                                                                     |   Number of imaging planes |   Number of ROIs across sessions |
+|   Mouse ID | Type                                                              |   Number of sessions | Stimuli                                                                                                     |   Number of imaging planes |   Number of ROIs across planes and sessions |
 |-----------:|:------------------------------------------------------------------|---------------------:|:------------------------------------------------------------------------------------------------------------|---------------------------:|---------------------------------:|
 |     809092 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             3284 |
 |     810268 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2233 |
