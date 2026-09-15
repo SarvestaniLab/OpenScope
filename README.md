@@ -1,0 +1,135 @@
+## Overview
+
+This dataset was collected by the Allen Institute as part of [OpenScope](https://www.allenneuraldynamics.org/projects/openscope) to test the unified mouse V2 hypothesis presented in [(Rowley & Sedigh-Sarvestani, 2025)](https://elifesciences.org/reviewed-preprints/105910v1). By releasing the dataset, we hope to allow others to independently test this hypothesis and other hypotheses surrounding mouse visual cortex organization.
+
+
+The dataset includes electrophysiological recordings (Ephys) using four Neuropixels probes within V1 and two-photon measurements (Ophys) from 12 V1 locations, together with stimuli for receptive-field mapping and characterization of orientation (Ori), spatial-frequency (SF), and temporal-frequency (TF) tuning.
+
+Visual area boundaries for V1 were obtained using intrinsic signal imaging (ISI). For a more detailed description of ISI, please see page 3 of the Visual Coding Overview [here](https://community.brain-map.org/t/documentation-brain-observatory/3026).
+
+## Stimuli
+
+The stimuli for the electrophysiological recordings includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90), full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135), and full-field flashes.   
+
+The stimuli for the two-photon measurements includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90) and full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135).   
+
+An example truncated ephys session is shown below.
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/1c861f92-a653-4379-990b-01a02dc8050d" width="30%"></video>
+</p>
+
+
+## Recordings
+
+#### Ephys
+The following data is contained in the electrophysiological recordings.
+
+|   Mouse ID | Type                |   Number of sessions | Stimuli                                                                                                                                      |   Number of probes |   Number of units across probes |
+|-----------:|:--------------------|---------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------|-------------------:|------------------:|
+|     810531 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2251 |
+|     810532 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2202 |
+|     813810 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2996 |
+|     815152 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2353 |
+|     816305 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2732 |
+|     816308 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2512 |
+|     817334 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2925 |
+|     817335 | Mus musculus, wt/wt |                    1 | drifting_gratings_field_block_presentations, flash_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                  4 |              2403 |
+
+#### Ophys
+The following data is contained in the 2-p recordings.
+|   Mouse ID | Type                                                              |   Number of sessions | Stimuli                                                                                                     |   Number of imaging planes |   Number of ROIs across sessions |
+|-----------:|:------------------------------------------------------------------|---------------------:|:------------------------------------------------------------------------------------------------------------|---------------------------:|---------------------------------:|
+|     809092 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             3284 |
+|     810268 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2233 |
+|     815059 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2712 |
+|     818322 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    2 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                              630 |
+|     818323 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                              973 |
+|     823093 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2915 |
+|     826616 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2575 |
+|     826619 | Mus musculus, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt |                    3 | drifting_gratings_field_block_presentations, receptive_field_block_presentations, spontaneous_presentations |                          8 |                             2226 |
+
+## Recording methods and data structure
+### Ephys
+### Ophys
+#### Data recording methods
+
+ 
+**Animal preparation and behavioral apparatus** were as described in the [Allen Brain Observatory Visual Coding: Overview technical whitepaper](https://s3.amazonaws.com/webflow-prod-assets/689cfbd308fa7373b604d290/68ee796f6f627db2434e459c_Documentation_Brain_Observatory-Visual_Coding_Overview.pdf).  Six female transgenic mice (96 to 145 days old, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt), expressing GCaMP6f in excitatory neurons of layers 2/3 and 4, were used. They were prepared with a cranial window and headbar, then habituated to the behavioral apparatus. Mice were head-fixed on a treadmill on which they could run freely, and viewed visual stimuli presented on a monitor to the right eye. Sessions were passive: no reward was delivered and mice were not restricted. Running speed and pupil position were recorded throughout.
+
+**Imaging** was performed on two Thorlabs mesoscopes at 920 nm through a XX objective. Eight planes (4 locations × 2 depths) were imaged simultaneously: four at 130–170 µm and four at 226–270 µm below the pia, within VISp. Planes were 512 × 512 pixels at 0.78 µm/pixel (399 µm field of view), acquired at 10.63 Hz on MESO.2 (809092, 810268, 826616, 826619) or 9.48 Hz on MESO.1 (815059, 823093). Each mouse was recorded in three sessions of ~67 min, sampling 12 locations tiling V1.
+
+**Data pre-processing** was performed in accordance with the [AIND multiplane-ophys pipeline](https://github.com/AllenNeuralDynamics/aind-multiplane-ophys-pipeline). Frames were first de-interleaved into their constituent planes, which were motion-corrected in Suite2p. Regions of interest were detected and fluorescence extracted using a combination of Cellpose and Suite2p, neuropil contamination was subtracted, ΔF/F traces were computed, and spiking events were inferred for each ROI with the OASIS deconvolution library. Processed data are distributed in Neurodata Without Borders format, with each imaging plane stored as a separate processing module containing raw, neuropil-corrected, ΔF/F and event traces, segmentation masks and summary images.
+
+#### Data structure
+
+**One NWB file = one session.**<br>**One clock per session.** Every array carries its own timestamps, in seconds. Streams start at different times and run at different rates, so align on timestamps, not by index.
+
+| Neural data | Stimulus data | Behavioural data |
+|---|---|---|
+| **`nwb.processing['VISp_0'] … ['VISp_7']`**<br>Eight modules, one per imaging plane — identical structure.<br>N frames × N ROIs.<br>9.5 or 10.6 Hz, by microscope.<br><br>**Traces** — all the same shape, each with its own timestamps.**One row per frame · one column per ROI.**<br>`['raw_timeseries']['ROI_fluorescence_timeseries']` · a.u.<br>`['neuropil_fluorescence_timeseries']` · a.u.<br>`['neuropil_corrected_timeseries']` · a.u.<br>`['dff_timeseries']['dff_timeseries']` · %<br>`['event_timeseries']` · AP-related events<br><br>**Segmentation**<br> **`['image_segmentation']['roi_table']`**<br>N rows, one per ROI<br>`is_soma` · `soma_probability` · `is_dendrite` · `dendrite_probability` · `image_mask` (512 × 512, use `> 0` for the footprint)<br><br>**Whole plane images**<br>**`['images']`**<br>`['average_projection']` · `['max_projection']` · `['segmentation_mask_image']` — 512 × 512 each<br>`['segmentation_mask_image']` labels every ROI in one array |**`nwb.intervals`**<br>Two stimulus tables, one per block.<br>One row per trial.<br>*Shared columns*<br>`start_time` · `stop_time` (seconds, session clock)<br>`stim_name` · `stim_type` · `stim_index`<br><br>**RF block**<br>**`['receptive_field_block_presentations']`**<br>N rows · 0.25 s per trial, back-to-back<br>*Position* `x_position` · `y_position`<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br>**Tuning block**<br>**`['drifting_gratings_field_block_presentations']`**<br>N rows · 1.0 s per trial, 1.25 s apart<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br>No position columns — full field<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp; | **Locomotion** <br> **`nwb.processing['running']`**<br>N samples · ~60 Hz<br>TimeSeries — timestamps on `.timestamps`<br>`['running_speed']` · cm/s, negative = backwards<br>`['running_wheel_rotation']` · radians<br><br>**Eye tracking**<br>**`nwb.processing['eye_tracking']`**<br>N rows · ~60 Hz · one row per camera frame<br>`['pupil']` · `['corneal_reflection']` · `['ellipse']`<br>&emsp;**DynamicTables — timestamps are a column**, not `.timestamps`<br>*All three tables have these columns*<br>`data_x` · `data_y` · `width` · `height` · `angle`<br>`area` · `area_raw` · `timestamps`<br>`reference_frame = 'nose'`<br>⚠️ `−1` marks a failed fit, not a value. Nothing is NaN.<br>`['likely_blink_times']`<br>TimeSeries, bool — timestamps on `.timestamps`<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp; |
+
+## Data access with DANDI CLI
+
+Dandiset **001709** holds 18 sessions from 6 mice, one NWB file per session, about 2.2 GB
+each and 34 GB in total. You can either **download** a file with the DANDI command-line tool
+or **stream** it, reading only the bytes you actually touch.
+
+For the DANDI CLI tool itself, see the archive's guides on
+[downloading](https://docs.dandiarchive.org/user-guide-using/accessing-data/downloading/)
+and [streaming](https://docs.dandiarchive.org/user-guide-using/accessing-data/streaming/).
+
+```bash
+pip install dandi pynwb remfile h5py
+```
+
+#### File paths
+
+One file per session, named from the subject and the session start time:
+
+```
+sub-<subject>/sub-<subject>_ses-multiplane-ophys-<subject>-<YYYY-MM-DD>-<HH-MM-SS>_ophys.nwb
+```
+**Show all the paths and sizes for on subject in bash**
+```bash
+dandi ls "dandi://DANDI/001709/sub-809092/"     # paths and sizes for one subject
+```
+**Show all the paths and sizes for the entire dataset**
+```python
+from dandi.dandiapi import DandiAPIClient
+
+with DandiAPIClient() as client:
+    for asset in client.get_dandiset("001709").get_assets():
+        print(f"{asset.size / 1e9:5.2f} GB  {asset.path}")
+```
+
+#### Stream one file
+
+```python
+import h5py, pynwb, remfile
+from dandi.dandiapi import DandiAPIClient
+#example file path
+PATH = ("sub-809092/"
+        "sub-809092_ses-multiplane-ophys-809092-2025-10-01-12-34-23_ophys.nwb")
+#find the file (asset) and its URL 
+asset = DandiAPIClient().get_dandiset("001709").get_asset_by_path(PATH)
+url = asset.get_content_url(follow_redirects=1, strip_query=False)
+#stream the file
+handle = h5py.File(remfile.File(url), "r")
+io = pynwb.NWBHDF5IO(file=handle, mode="r")
+nwbfile = io.read()
+```
+
+`follow_redirects=1` resolves the archive's redirect to storage; `strip_query=False` keeps
+the signature that makes the resulting URL readable. Call `io.close()` and `handle.close()`
+when done.
+
+#### Download one file
+**Command line**
+```bash
+dandi download "dandi://DANDI/001709/sub-809092/sub-809092_ses-multiplane-ophys-809092-2025-10-01-12-34-23_ophys.nwb"
+```
+**Script**
+```python
+nwbfile = pynwb.NWBHDF5IO(PATH, mode="r").read()
+```
