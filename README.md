@@ -5,6 +5,15 @@ This dataset was collected by the Allen Institute as part of [OpenScope](https:/
 
 The dataset includes electrophysiological recordings (Ephys) using four Neuropixels probes within V1 and two-photon measurements (Ophys) from 12 V1 locations, together with stimuli for receptive-field mapping and characterization of orientation (Ori), spatial-frequency (SF), and temporal-frequency (TF) tuning.
 
+Generic probe placement (left) and two-photon imaging planes locations (right) are shown below. For two-photon imaging, 4 planes were imaged at 2 depths in a single session (i.e., all orange planes in the first session, all blue planes in the second session, etc.). This means there are 8 imaging planes per file for the ophys dataset.
+<table align="center">
+  <tr>
+  <td><img width="272" height="238" alt="Asset 4" src="https://github.com/user-attachments/assets/8900b538-153c-46f1-87c4-a248aae71f26" />
+  <td><img width="234" height="208" alt="Asset 2" src="https://github.com/user-attachments/assets/7144b12a-d710-4daa-a37d-dc8c35cecadb" />
+ </tr>
+</table>
+
+
 Visual area boundaries for V1 were obtained using intrinsic signal imaging (ISI). For a more detailed description of ISI, please see page 3 of the Visual Coding Overview [here](https://community.brain-map.org/t/documentation-brain-observatory/3026).
 
 ## Stimuli
