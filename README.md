@@ -1,4 +1,4 @@
-## Overview
+[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292653/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292641/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292415/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292379/ephys_data_structure_reference.md)## Overview
 
 This dataset was collected by the Allen Institute as part of [OpenScope](https://www.allenneuraldynamics.org/projects/openscope) to test the unified mouse V2 hypothesis presented in [(Rowley & Sedigh-Sarvestani, 2025)](https://elifesciences.org/reviewed-preprints/105910v1). By releasing the dataset, we hope to allow others to independently test this hypothesis and other hypotheses surrounding mouse visual cortex organization.
 
@@ -32,8 +32,15 @@ An example truncated ephys session is shown below.
 ### Ephys
 #### Data recording methods
 
+\[add diagram of recording apparatus here\]
 
 #### Data structure
+
+For session 817335, 
+
+| Neural data | Stimulus data | Behavioural data |
+|---|---|---|
+| **`nwb.units`**<br>2403 units, one row per neuron, across 4 probes — ProbeA · ProbeB · ProbeC · ProbeE.<br>*Key columns* `spike_times` · `firing_rate` · `device_name` (which probe)<br><br>**Electrodes**<br>**`nwb.electrodes`**<br>1920 rows, one per recording channel (480/probe)<br>`location` · `group_name` · `channel_name` · `gain_to_physical_unit` (~0.195 µV/bit) · `rel_x` · `rel_y`<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br> | **`nwb.intervals`**<br>Four stimulus tables, one per block.<br>One row per trial.<br>*Shared columns*<br>`start_time` · `stop_time` (seconds, session clock)<br>`stim_name` · `stim_type` · `stim_index`<br><br>**RF block**<br>**`['receptive_field_block_presentations']`**<br>4860 rows · 0.25 s per trial, back-to-back<br>*Position* `x_position` · `y_position`<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br><br>**Tuning block**<br>**`['drifting_gratings_field_block_presentations']`**<br>1500 rows · 1.00 s per trial, 1.25 s apart<br>*Grating* `orientation` · `spatial_frequency` · `temporal_frequency` · `contrast`<br>No position columns — full field<br><br>**Flash block**<br>**`['flash_field_block_presentations']`**<br>300 rows · 0.25 s per trial, 2.00 s apart<br>Grating columns present but unused — full-field flash, no position<br><br>**Spontaneous block**<br>**`['spontaneous_presentations']`**<br>2 rows · gray screen, no stimulus parameters | **Locomotion**<br>**`nwb.processing['running']`**<br>320,687 samples · ~60 Hz<br>TimeSeries — timestamps on `.timestamps`<br>`['running_speed']` · cm/s, negative = backwards<br>`['running_wheel_rotation']` · radians<br><br>**Eye tracking**<br>**`nwb.processing['eye_tracking']`**<br>324,466 rows · ~60 Hz · one row per camera frame<br>`['corneal_reflection']` · `['ellipse']` · `['pupil']`<br>DynamicTables — timestamps are a column, not `.timestamps`<br>*All three tables have these columns*<br>`data_x` · `data_y` · `area` · `area_raw` · `width` · `height` · `angle` · `timestamps`<br>`reference_frame = 'nose'`<br>⚠️ `-1` marks a failed fit, not a value. Nothing is NaN.<br>`['likely_blink_times']`<br>TimeSeries, bool — timestamps on `.timestamps`<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br> |
 
 An example breakdown of trials and times for one of the ephys sessions is shown below. 
 
@@ -44,6 +51,8 @@ An example breakdown of trials and times for one of the ephys sessions is shown 
 
  
 **Animal preparation and behavioral apparatus** were as described in the [Allen Brain Observatory Visual Coding: Overview technical whitepaper](https://s3.amazonaws.com/webflow-prod-assets/689cfbd308fa7373b604d290/68ee796f6f627db2434e459c_Documentation_Brain_Observatory-Visual_Coding_Overview.pdf).  Six female transgenic mice (96 to 145 days old, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt), expressing GCaMP6f in excitatory neurons of layers 2/3 and 4, were used. They were prepared with a cranial window and headbar, then habituated to the behavioral apparatus. Mice were head-fixed on a treadmill on which they could run freely, and viewed visual stimuli presented on a monitor to the right eye. Sessions were passive: no reward was delivered and mice were not restricted. Running speed and pupil position were recorded throughout.
+
+\[add diagram of recording apparatus here\]
 
 **Imaging** was performed on two Thorlabs mesoscopes at 920 nm through a XX objective. Eight planes (4 locations × 2 depths) were imaged simultaneously: four at 130–170 µm and four at 226–270 µm below the pia, within VISp. Planes were 512 × 512 pixels at 0.78 µm/pixel (399 µm field of view), acquired at 10.63 Hz on MESO.2 (809092, 810268, 826616, 826619) or 9.48 Hz on MESO.1 (815059, 823093). Each mouse was recorded in three sessions of ~67 min, sampling 12 locations tiling V1.
 
@@ -63,7 +72,7 @@ An example breakdown of trials and times for one of the ophys sessions is shown 
 
 ## Data access with DANDI CLI
 
-Dandiset **001709** holds 18 sessions from 6 mice, one NWB file per session, about 2.2 GB
+Dandiset **001709** (Ophys) holds 18 sessions from 6 mice, one NWB file per session, about 2.2 GB
 each and 34 GB in total. You can either **download** a file with the DANDI command-line tool
 or **stream** it, reading only the bytes you actually touch.
 
