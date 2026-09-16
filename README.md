@@ -1,4 +1,4 @@
-[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292653/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292641/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292415/ephys_data_structure_reference.md)[ephys_data_structure_reference.md](https://github.com/user-attachments/files/32292379/ephys_data_structure_reference.md)## Overview
+## Overview
 
 This dataset was collected by the Allen Institute as part of [OpenScope](https://www.allenneuraldynamics.org/projects/openscope) to test the unified mouse V2 hypothesis presented in [(Rowley & Sedigh-Sarvestani, 2025)](https://elifesciences.org/reviewed-preprints/105910v1). By releasing the dataset, we hope to allow others to independently test this hypothesis and other hypotheses surrounding mouse visual cortex organization.
 
