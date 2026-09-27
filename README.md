@@ -25,7 +25,7 @@ To assess the spatial and feature tuning of V1 neurons recorded at different ret
   * full-field flashes.   
 
 - The stimuli for the two-photon measurements includes
-  * gabor patches (fixed TF and SF with varying Ori: 0, 45,90)
+  * gabor patches (fixed TF and SF with varying Ori: 0°, 45°, 90°)
   * full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0 Hz; SF: 0.02, 0.04, 0.08, 0.16, 0.32 cpd; Ori: 0°, 45°, 90°, 135°).   
 
 An example truncated ephys session is shown below.
@@ -60,7 +60,7 @@ An example breakdown of trials and times for one of the ephys sessions is shown 
 
 \[add diagram of recording apparatus here\]
 
-**Imaging** was performed on two Thorlabs mesoscopes at 920 nm through a XX objective. Eight planes (4 locations × 2 depths) were imaged simultaneously: four at 130–170 µm and four at 226–270 µm below the pia, within VISp. Planes were 512 × 512 pixels at 0.78 µm/pixel (399 µm field of view), acquired at 10.63 Hz on MESO.2 (809092, 810268, 826616, 826619) or 9.48 Hz on MESO.1 (815059, 823093). Each mouse was recorded in three sessions of ~67 min, sampling 12 locations tiling V1.
+**Imaging** was performed on two Thorlabs mesoscopes. Eight planes (4 locations × 2 depths) were imaged simultaneously: four at 130–170 µm and four at 226–270 µm below the pia, within VISp. Planes were 512 × 512 pixels at 0.78 µm/pixel (399 µm field of view), acquired at 10.63 Hz on MESO.2 (809092, 810268, 826616, 826619) or 9.48 Hz on MESO.1 (815059, 823093). Each mouse was recorded in three sessions of ~67 min, sampling 12 locations tiling V1.
 
 **Data pre-processing** was performed in accordance with the [AIND multiplane-ophys pipeline](https://github.com/AllenNeuralDynamics/aind-multiplane-ophys-pipeline). Frames were first de-interleaved into their constituent planes, which were motion-corrected in Suite2p. Regions of interest were detected and fluorescence extracted using a combination of Cellpose and Suite2p, neuropil contamination was subtracted, ΔF/F traces were computed, and spiking events were inferred for each ROI with the OASIS deconvolution library. Processed data are distributed in Neurodata Without Borders format, with each imaging plane stored as a separate processing module containing raw, neuropil-corrected, ΔF/F and event traces, segmentation masks and summary images.
 
