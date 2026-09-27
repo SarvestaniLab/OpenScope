@@ -18,9 +18,15 @@ Visual area boundaries for V1 were obtained using intrinsic signal imaging (ISI)
 
 ## Stimuli
 
-The stimuli for the electrophysiological recordings includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90), full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135), and full-field flashes.   
+To assess the spatial and feature tuning of V1 neurons recorded at different retinotopic V1 locations, the following stimulus set was used: 
+- The stimuli for the electrophysiological recordings includes
+  * gabor patches (fixed TF and SF with varying Ori: 0°, 45°, 90°)
+  * full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0 Hz; SF: 0.02, 0.04, 0.08, 0.16, 0.32 cpd; Ori: 0°, 45°, 90°, 135°)
+  * full-field flashes.   
 
-The stimuli for the two-photon measurements includes gabor patches (fixed TF and SF with varying Ori: 0, 45,90) and full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0; SF: 0.02, 0.04, 0.08, 0.16, 0.32; Ori: 0, 45, 90, 135).   
+- The stimuli for the two-photon measurements includes
+  * gabor patches (fixed TF and SF with varying Ori: 0, 45,90)
+  * full-field drifting gratings (TF: 1.0, 2.0, 4.0, 8.0, 15.0 Hz; SF: 0.02, 0.04, 0.08, 0.16, 0.32 cpd; Ori: 0°, 45°, 90°, 135°).   
 
 An example truncated ephys session is shown below.
 
@@ -72,9 +78,12 @@ An example breakdown of trials and times for one of the ophys sessions is shown 
 
 ## Data access with DANDI CLI
 
-Dandiset **001709** (Ophys) holds 18 sessions from 6 mice, one NWB file per session, about 2.2 GB
-each and 34 GB in total. You can either **download** a file with the DANDI command-line tool
-or **stream** it, reading only the bytes you actually touch.
+
+The project is split across two dandisets, one per recording modality, **001568** for Ephys and **001709** for Ophys. <br>
+One NWB file per session in both. They share the same layout and the same access
+code — only the identifier and the file names differ. You can either **download** a
+file with the DANDI command-line tool or **stream** it, reading only the bytes you
+actually touch. <br>
 
 For the DANDI CLI tool itself, see the archive's guides on
 [downloading](https://docs.dandiarchive.org/user-guide-using/accessing-data/downloading/)
@@ -84,51 +93,64 @@ and [streaming](https://docs.dandiarchive.org/user-guide-using/accessing-data/st
 pip install dandi pynwb remfile h5py
 ```
 
-#### File paths
+### File paths
 
-One file per session, named from the subject and the session start time:
+Named from the subject and the session start time, with the modality in both the
+session token and the suffix:
 
 ```
-sub-<subject>/sub-<subject>_ses-multiplane-ophys-<subject>-<YYYY-MM-DD>-<HH-MM-SS>_ophys.nwb
+Ephys: sub-<subject>/sub-<subject>_ses-ecephys-<subject>-<YYYY-MM-DD>-<HH-MM-SS>_ecephys.nwb 
+Ophys: sub-<subject>/sub-<subject>_ses-multiplane-ophys-<subject>-<YYYY-MM-DD>-<HH-MM-SS>_ophys.nwb
 ```
-**Show all the paths and sizes for on subject in bash**
+
+**Show the paths and sizes for one subject, in bash**
 ```bash
-dandi ls "dandi://DANDI/001709/sub-809092/"     # paths and sizes for one subject
+dandi ls "dandi://DANDI/001568/sub-810531/"
 ```
-**Show all the paths and sizes for the entire dataset**
+
+**Show the paths and sizes for a whole dandiset**
 ```python
 from dandi.dandiapi import DandiAPIClient
 
+DANDISET = "001568"          # ephys;  use "001709" for ophys
+
 with DandiAPIClient() as client:
-    for asset in client.get_dandiset("001709").get_assets():
+    for asset in client.get_dandiset(DANDISET).get_assets():
         print(f"{asset.size / 1e9:5.2f} GB  {asset.path}")
 ```
 
-#### Stream one file
+### Stream one file
 
 ```python
 import h5py, pynwb, remfile
 from dandi.dandiapi import DandiAPIClient
-#example file path
-PATH = ("sub-809092/"
-        "sub-809092_ses-multiplane-ophys-809092-2025-10-01-12-34-23_ophys.nwb")
-#find the file (asset) and its URL 
-asset = DandiAPIClient().get_dandiset("001709").get_asset_by_path(PATH)
+
+DANDISET = "001568"
+PATH = ("sub-810531/"
+        "sub-810531_ses-ecephys-810531-2025-09-17-15-14-30_ecephys.nwb")
+
+# for the ophys dandiset instead:
+# DANDISET = "001709"
+# PATH = ("sub-809092/"
+#         "sub-809092_ses-multiplane-ophys-809092-2025-10-01-12-34-23_ophys.nwb")
+
+# find the file (asset) and its URL
+asset = DandiAPIClient().get_dandiset(DANDISET).get_asset_by_path(PATH)
 url = asset.get_content_url(follow_redirects=1, strip_query=False)
-#stream the file
+# stream the file
 handle = h5py.File(remfile.File(url), "r")
 io = pynwb.NWBHDF5IO(file=handle, mode="r")
 nwbfile = io.read()
 ```
 
-`follow_redirects=1` resolves the archive's redirect to storage; `strip_query=False` keeps
-the signature that makes the resulting URL readable. Call `io.close()` and `handle.close()`
-when done.
+`follow_redirects=1` resolves the archive's redirect to storage; `strip_query=False`
+keeps the signature that makes the resulting URL readable. Call `io.close()` and
+`handle.close()` when done.
 
-#### Download one file
+### Download one file
 **Command line**
 ```bash
-dandi download "dandi://DANDI/001709/sub-809092/sub-809092_ses-multiplane-ophys-809092-2025-10-01-12-34-23_ophys.nwb"
+dandi download "dandi://DANDI/001568/sub-810531/sub-810531_ses-ecephys-810531-2025-09-17-15-14-30_ecephys.nwb"
 ```
 **Script**
 ```python
