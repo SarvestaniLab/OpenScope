@@ -8,11 +8,10 @@ The dataset includes electrophysiological recordings (Ephys) using four Neuropix
 Generic probe placement (left) and two-photon imaging planes locations (right) are shown below. For two-photon imaging, 4 planes were imaged at 2 depths in a single session (i.e., all orange planes in the first session, all blue planes in the second session, etc.). This means there are 8 imaging planes per file for the ophys dataset.
 <table align="center">
   <tr>
-  <td><img width="272" height="238" alt="Asset 4" src="https://github.com/user-attachments/assets/8900b538-153c-46f1-87c4-a248aae71f26" />
-  <td><img width="234" height="208" alt="Asset 2" src="https://github.com/user-attachments/assets/7144b12a-d710-4daa-a37d-dc8c35cecadb" />
+  <td><img width="272" height="238" alt="Asset 4" src="https://github.com/user-attachments/assets/be770cf2-9a23-4ec5-b660-c30060828a06" />
+  <td><img width="234" height="208" alt="Asset 2" src="https://github.com/user-attachments/assets/5f0ca0a2-18c5-4e6d-bff5-6149b319199e" />
  </tr>
 </table>
-
 
 Visual area boundaries for V1 were obtained using intrinsic signal imaging (ISI). For a more detailed description of ISI, please see page 3 of the Visual Coding Overview [here](https://community.brain-map.org/t/documentation-brain-observatory/3026).
 
@@ -38,7 +37,17 @@ An example truncated ephys session is shown below.
 ### Ephys
 #### Data recording methods
 
-\[add diagram of recording apparatus here\]
+**Animal preparation and behavioral apparatus** Five male and 3 female wild type mice (99 to 114 days old) were used. They were prepared with a SHIELD cranial implant for repeated probe access, then habituated to the behavioral apparatus. Mice were head-fixed on a treadmill on which they could run freely, and viewed visual stimuli presented on a monitor to the right eye. Sessions were passive: no reward was delivered and mice were not restricted. Running speed and pupil position were recorded throughout. 
+
+The behavioral and imaging apparatus for the ephys dataset is shown below.
+
+<p align="center">
+  <img width="556" height="355" alt="figure3_ephys" src="https://github.com/user-attachments/assets/b09c7ade-fbc4-49ac-88e6-d15d9341a95e" />
+</p>
+
+**Imaging** Recordings were performed using Neuropixels 1.0 probes. Up to six probes were inserted to 3.1 mm and retracted by 100 µm. The 348 closet recording sites to the probe tip were sampled using Open Ephys. Each mouse was recorded once.
+
+**Data pre-processing** Spikes were sorted with Kilosort 4. Data is distributed in the Neurodata Without Borders format, with each unit (neuron) containing the spike times and the probe it was recorded from. 
 
 #### Data structure
 
@@ -58,7 +67,11 @@ An example breakdown of trials and times for one of the ephys sessions is shown 
  
 **Animal preparation and behavioral apparatus** were as described in the [Allen Brain Observatory Visual Coding: Overview technical whitepaper](https://s3.amazonaws.com/webflow-prod-assets/689cfbd308fa7373b604d290/68ee796f6f627db2434e459c_Documentation_Brain_Observatory-Visual_Coding_Overview.pdf).  Six female transgenic mice (96 to 145 days old, Cux2-CreERT2/wt;Camk2a-tTA/wt;Ai93(TITL-GCaMP6f)/wt), expressing GCaMP6f in excitatory neurons of layers 2/3 and 4, were used. They were prepared with a cranial window and headbar, then habituated to the behavioral apparatus. Mice were head-fixed on a treadmill on which they could run freely, and viewed visual stimuli presented on a monitor to the right eye. Sessions were passive: no reward was delivered and mice were not restricted. Running speed and pupil position were recorded throughout.
 
-\[add diagram of recording apparatus here\]
+The behavioral and imaging apparatus for the ophys dataset is shown below.
+
+<p align="center">
+  <img width="556" height="355" alt="figure3_2p" src="https://github.com/user-attachments/assets/26dc2e76-3b43-4260-ba78-c1b377be1e6d" />
+</p>
 
 **Imaging** was performed on two Thorlabs mesoscopes. Eight planes (4 locations × 2 depths) were imaged simultaneously: four at 130–170 µm and four at 226–270 µm below the pia, within VISp. Planes were 512 × 512 pixels at 0.78 µm/pixel (399 µm field of view), acquired at 10.63 Hz on MESO.2 (809092, 810268, 826616, 826619) or 9.48 Hz on MESO.1 (815059, 823093). Each mouse was recorded in three sessions of ~67 min, sampling 12 locations tiling V1.
 
