@@ -1,6 +1,6 @@
 ## Overview
 
-This dataset was collected by the Allen Institute as part of [OpenScope](https://www.allenneuraldynamics.org/projects/openscope) to test the unified mouse V2 hypothesis presented in [(Rowley & Sedigh-Sarvestani, 2025)](https://elifesciences.org/reviewed-preprints/105910v1). By releasing the dataset, we hope to allow others to independently test this hypothesis and other hypotheses surrounding mouse visual cortex organization.
+This dataset was collected by the Allen Institute as part of [OpenScope](https://www.allenneuraldynamics.org/projects/openscope) to test the unified mouse V2 hypothesis presented in [(Rowley et al., 2026)](https://www.biorxiv.org/content/10.1101/2024.10.10.617533v4). By releasing the dataset, we hope to allow others to independently test this hypothesis and other hypotheses surrounding mouse visual cortex organization.
 
 
 The dataset includes electrophysiological recordings (Ephys) using four Neuropixels probes within V1 and two-photon measurements (Ophys) from 12 V1 locations, together with stimuli for receptive-field mapping and characterization of orientation (Ori), spatial-frequency (SF), and temporal-frequency (TF) tuning.
@@ -169,9 +169,3 @@ dandi download "dandi://DANDI/001568/sub-810531/sub-810531_ses-ecephys-810531-20
 ```python
 nwbfile = pynwb.NWBHDF5IO(PATH, mode="r").read()
 ```
-
-#### Questions for the Allen Institute
--There's no mention of tam induction procedure in the white book - should we describe it in the readme?
--Is there a document detailing the microscope apparatus beyond the metadata in the files? This is very light https://allenneuraldynamics.github.io/openscope-community-predictive-processing/hardware/allen_institute_mesoscope_hardware/
--I think the plane coordinates for the FOVs need to be in the dataset for it to be used at the best of its potential
-
